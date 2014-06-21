@@ -4,7 +4,6 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public float maxSpeed;
-	public float screenBounds;
 
 	private int facingRight;
 	private int facingUp;
@@ -30,7 +29,7 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate()
 	{
 		MoveHorizontal();
-		MoveVertical ();
+		//MoveVertical ();
 
 		if(rigidbody2D.velocity.y != 0)
 		{
@@ -67,5 +66,9 @@ public class PlayerController : MonoBehaviour {
 		if(moveY != 0) {
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, facingUp * maxSpeed);
 		}
+	}
+
+	void OnCollisionEnter2D(GameObject other) {
+		Debug.Log ("hello");
 	}
 }
