@@ -64,11 +64,12 @@ public class PlayerController : MonoBehaviour {
 			FlipVertical();
 		}
 		if(moveY != 0) {
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, facingUp * maxSpeed);
+
+			rigidbody2D.AddForce (new Vector2(0.0f, facingUp * maxSpeed));
 		}
 	}
 
-	void OnCollisionEnter2D(GameObject other) {
+	void OnCollisionEnter2D(Collision2D other) {
 		Debug.Log ("hello");
 	}
 }
