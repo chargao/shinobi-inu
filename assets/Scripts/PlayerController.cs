@@ -9,32 +9,37 @@ public class PlayerController : MonoBehaviour {
 	private int facingUp;
 	private float moveX;
 	private float moveY;
+	private bool isVertical;
+	private Animator playerAnimator;
+
+
+	public GameObject weapon;
 
 	void Awake()
 	{
 		DontDestroyOnLoad (this);
+		playerAnimator = GetComponent<Animator> ();
 	}
 
 	// Use this for initialization
 	void Start () {
 		facingRight = -1;
 		facingUp = -1;
+		isVertical = false;
 	}
 
 	void Update()
 	{
-
+		if(Input.GetMouseButtonDown(0))
+			Attack1 ();
+		if(Input.GetMouseButtonDown(1))
+			Attack2 ();
 	}
 
 	void FixedUpdate()
 	{
 		MoveHorizontal();
-		//MoveVertical ();
-
-		if(rigidbody2D.velocity.y != 0)
-		{
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0.0f);
-		}
+		MoveVertical();
 	}
 
 	void FlipHorizontal()
@@ -48,6 +53,10 @@ public class PlayerController : MonoBehaviour {
 	void FlipVertical()
 	{
 		facingUp = -1 * facingUp;
+		if (facingUp == 1)
+			playerAnimator.SetTrigger ("MoveUp");
+		else
+			playerAnimator.SetTrigger ("MoveDown");
 	}
 
 	void MoveHorizontal()
@@ -55,8 +64,10 @@ public class PlayerController : MonoBehaviour {
 		moveX = Input.GetAxis ("Horizontal");
 		if((moveX < 0 && facingRight==1) || (moveX > 0 && facingRight==-1))
 			FlipHorizontal();
-		if(moveX != 0)
+		if(moveX != 0) {
+			isVertical = false;
 			rigidbody2D.velocity = new Vector2(facingRight * maxSpeed, rigidbody2D.velocity.y);
+		}
 	}
 	void MoveVertical() {
 		moveY = Input.GetAxis ("Vertical");
@@ -64,12 +75,32 @@ public class PlayerController : MonoBehaviour {
 			FlipVertical();
 		}
 		if(moveY != 0) {
-
-			rigidbody2D.AddForce (new Vector2(0.0f, facingUp * maxSpeed));
+			isVertical = true;
+			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, facingUp * maxSpeed);
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D other) {
-		Debug.Log ("hello");
+	void Attack1() {
+		if(!isVertical) {
+			if(facingRight == 1) {
+				Instantiate (weapon, new Vector3(transform.position.x + 2,transform.position.y,0.0f), transform.rotation);
+			}
+			else {
+				Instantiate (weapon, new Vector3(transform.position.x - 2,transform.position.y,0.0f), transform.rotation);
+			}
+		}
+		else {
+			if(facingUp == 1) {
+				Instantiate (weapon, new Vector3(transform.position.x,transform.position.y + 2,0.0f), transform.rotation);
+			}
+			else {
+				Instantiate (weapon, new Vector3(transform.position.x,transform.position.y - 2,0.0f), transform.rotation);
+			}
+		}
 	}
+
+	void Attack2 () {
+		Debug.Log("attack 2.");
+	}
+
 }
