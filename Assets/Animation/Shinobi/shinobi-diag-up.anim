@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: shinobi-down
+  m_Name: shinobi-diag-up
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -18,26 +18,26 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 8174a8671579eb345893b810838bac28, type: 3}
+      value: {fileID: 21300000, guid: f97eecc1d0781d5488bfbd714ac1d027, type: 3}
     - time: .0666666701
-      value: {fileID: 21300000, guid: 6768dc2bc4042ea44a0d018fd035a7c5, type: 3}
+      value: {fileID: 21300000, guid: 865df79ca2d49ae4eb2b52af63226b18, type: 3}
     - time: .13333334
-      value: {fileID: 21300000, guid: 45c60f9233a1f264291e1d1fad600039, type: 3}
+      value: {fileID: 21300000, guid: d0f2acb45510ff84ab055931cece42a5, type: 3}
     - time: .200000003
-      value: {fileID: 21300000, guid: 14e2128f1a05fde4480993a743eaa713, type: 3}
+      value: {fileID: 21300000, guid: 44ed9c7b3ec0b434ebe9934612eac11e, type: 3}
     - time: .266666681
-      value: {fileID: 21300000, guid: 650a28d0ffe38624db58e128526221ef, type: 3}
+      value: {fileID: 21300000, guid: d4575c6b30fbba34cb151da47333260b, type: 3}
     - time: .333333343
-      value: {fileID: 21300000, guid: 108de0091e44cfa4d8f13ca6e7681665, type: 3}
+      value: {fileID: 21300000, guid: 38138e6f480cb9d4eb42684d690400a5, type: 3}
     - time: .400000006
-      value: {fileID: 21300000, guid: a1f5043cf01b30b4097c000994fb9684, type: 3}
+      value: {fileID: 21300000, guid: 7386669c402ddc044bb366d3b58fbfd1, type: 3}
     - time: .466666669
-      value: {fileID: 21300000, guid: e30d5bbb2161d9446b9a1bab03b225b7, type: 3}
+      value: {fileID: 21300000, guid: c8363be057535634ca130c153c825962, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 15
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -45,7 +45,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .483333349
+    m_StopTime: .533333361
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
