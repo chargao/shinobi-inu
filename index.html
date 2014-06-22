@@ -59,6 +59,8 @@
 					}
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "Builds.unity3d");
+				
+				$("#splash").click(function(){$(this).hide()})
 			});
 		-->
 		</script>
@@ -120,7 +122,7 @@
 	<body>
 		<h1 class="header"><span>SHINOBI INU</span></h1>
 		<div class="content">
-		<img height="600" width="960" src="https://i.imgur.com/odF3ccu.png" />
+		<img id="splash" height="600" width="960" src="https://i.imgur.com/odF3ccu.png" />
 			<div id="unityPlayer">
 				<div class="missing">
 					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
@@ -130,7 +132,7 @@
 			</div>
 		</div>
 		<p class="footer">
-		<span>Charlie Gao, Aaron Ballard, Karen Zimmermann, Fletcher Kinnear, Justen Burrhus</span><br />
+		<span tyle="color:white">Charlie Gao, Aaron Ballard, Karen Zimmermann, Fletcher Kinnear, Justen Burrhus</span><br />
 		&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
 	</body>
 </html>
