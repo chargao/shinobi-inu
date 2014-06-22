@@ -6,6 +6,7 @@ public class PullToolController : MonoBehaviour {
 	private GameObject player;
 	private int frameCounter;
 	public float speed;
+	private Transform thing;
 
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -14,7 +15,7 @@ public class PullToolController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(frameCounter < 2) {
+		if(frameCounter < 10) {
 			frameCounter++;
 		}
 		else {
@@ -22,13 +23,23 @@ public class PullToolController : MonoBehaviour {
 		}
 	}
 	
-	void OnCollisionEnter(Collision other) {
-		Vector3 relative = other.transform.position - transform.position;
-		Vector3 movementNormal = Vector3.Normalize(relative);
-		if(other.gameObject.tag == "boulder") {
-			Debug.Log ("pulled: "+other.gameObject.tag);
-			rigidbody2D.AddForce(new Vector2(movementNormal.x, movementNormal.y) * speed);
+	void OnControllerColliderHit(ControllerColliderHit hit) {
+		Debug.Log ("hit");
+		if(hit.transform.tag=="boulder") {
+			thing = hit.transform;
 		}
-		Destroy (this.gameObject);
+
+		if(thing!=null) {
+			Vector3 D = transform.position - thing.position;
+			float dist = D.magnitude;
+			Vector3 pullDirection = D.normalized;
+
+			if(dist>50) {thing = null;}
+			else if(dist>3) {
+				float pullF = 10;
+
+				//thing.rigidbody.velocity += pullDirection*(pullDirection * Time.deltaTime);
+			}
+		}
 	}
 }

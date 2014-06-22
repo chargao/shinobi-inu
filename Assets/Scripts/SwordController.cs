@@ -24,7 +24,7 @@ public class SwordController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other) {
 		if(other.gameObject.tag == "enemy") {
 			Debug.Log ("killed: "+other.gameObject.tag);
-			other.gameObject.
+			//other.gameObject.
 		}
 		Destroy (this.gameObject);
 	}
