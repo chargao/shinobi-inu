@@ -4,6 +4,7 @@ using System.Collections;
 public class SwordController : MonoBehaviour {
 
 	private int frameCounter;
+	private NPCController enemy;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +24,7 @@ public class SwordController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other) {
 		if(other.gameObject.tag == "enemy") {
 			Debug.Log ("killed: "+other.gameObject.tag);
-			Destroy(other.gameObject);
+			other.gameObject.
 		}
 		Destroy (this.gameObject);
 	}

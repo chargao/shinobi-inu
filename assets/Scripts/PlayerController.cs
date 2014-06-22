@@ -4,6 +4,9 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public float maxSpeed;
+	public bool isDoge;
+	public int health;
+	public int attack;
 
 	private int facingRight;
 	private int facingUp;
@@ -12,8 +15,9 @@ public class PlayerController : MonoBehaviour {
 	private bool isVertical;
 	private Animator playerAnimator;
 
-
 	public GameObject weapon;
+	//public GameObject PushTool;
+	public GameObject PullTool;
 
 	void Awake()
 	{
@@ -26,6 +30,12 @@ public class PlayerController : MonoBehaviour {
 		facingRight = -1;
 		facingUp = -1;
 		isVertical = false;
+		if(isDoge) {
+			attack = attack * 1;
+		}
+		else {
+			attack = attack * 2;
+		}
 	}
 
 	void Update()
@@ -33,7 +43,7 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0))
 			Attack1 ();
 		if(Input.GetMouseButtonDown(1))
-			Attack2 ();
+			PushPull ();
 	}
 
 	void FixedUpdate()
@@ -81,6 +91,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Attack1() {
+		playerAnimator.SetTrigger ("MainAttack");
 		if(!isVertical) {
 			if(facingRight == 1) {
 				Instantiate (weapon, new Vector3(transform.position.x + 2,transform.position.y,0.0f), transform.rotation);
@@ -99,8 +110,43 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void Attack2 () {
-		Debug.Log("attack 2.");
+	void PushPull () {
+		if(isDoge) { // pull
+			if(!isVertical) {
+				if(facingRight == 1) {
+					Instantiate (PullTool, new Vector3(transform.position.x + 2,transform.position.y,0.0f), transform.rotation);
+				}
+				else {
+					Instantiate (PullTool, new Vector3(transform.position.x - 2,transform.position.y,0.0f), transform.rotation);
+				}
+			}
+			else {
+				if(facingUp == 1) {
+					Instantiate (PullTool, new Vector3(transform.position.x,transform.position.y + 2,0.0f), transform.rotation);
+				}
+				else {
+					Instantiate (PullTool, new Vector3(transform.position.x,transform.position.y - 2,0.0f), transform.rotation);
+				}
+			}
+		}
+		else { // push
+			/*if(!isVertical) {
+				if(facingRight == 1) {
+					Instantiate (PushTool, new Vector3(transform.position.x + 2,transform.position.y,0.0f), transform.rotation);
+				}
+				else {
+					Instantiate (PushTool, new Vector3(transform.position.x - 2,transform.position.y,0.0f), transform.rotation);
+				}
+			}
+			else {
+				if(facingUp == 1) {
+					Instantiate (PushTool, new Vector3(transform.position.x,transform.position.y + 2,0.0f), transform.rotation);
+				}
+				else {
+					Instantiate (PushTool, new Vector3(transform.position.x,transform.position.y - 2,0.0f), transform.rotation);
+				}
+			}*/
+		}
 	}
 
 }
