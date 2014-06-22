@@ -19,7 +19,7 @@ public class LightController : MonoBehaviour {
 	}
 
 	void Update() {
-		if(Input.GetKey(KeyCode.R)) {
+		if(Input.GetKeyDown(KeyCode.R)) {
 			if(isDoge) {
 				switchToHuman();
 			}
@@ -33,17 +33,21 @@ public class LightController : MonoBehaviour {
 	}
 
 	public void switchToHuman() {
+		humanLight.light.intensity = 0.4f;
 		Vector3 pos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
 		Instantiate (Human, pos, Quaternion.identity);
 		Destroy (player.gameObject);
-
+		isDoge = false;
 
 	}
 
 	public void switchToDoge() {
+		humanLight.light.intensity = 0.0f;
+		Debug.Log ("toDoge");
 		Vector3 pos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
-		Destroy (player.gameObject);
-		
 		Instantiate (Doge, pos, Quaternion.identity);
+		Destroy (player.gameObject);
+		isDoge = true;
+
 	}
 }

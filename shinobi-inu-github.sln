@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{9BB7EEE1-E3C2-9415-C153-3C44074C0D4D}") = "shinobi-inu-github", "Assembly-CSharp.csproj", "{F74EAC64-C286-9A60-4598-7FCA0B4869A8}"
 EndProject
+Project("{9BB7EEE1-E3C2-9415-C153-3C44074C0D4D}") = "shinobi-inu-github", "Assembly-UnityScript.unityproj", "{FC36E32F-CC3C-C595-D9A4-76EEFE6691F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{F74EAC64-C286-9A60-4598-7FCA0B4869A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F74EAC64-C286-9A60-4598-7FCA0B4869A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F74EAC64-C286-9A60-4598-7FCA0B4869A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC36E32F-CC3C-C595-D9A4-76EEFE6691F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC36E32F-CC3C-C595-D9A4-76EEFE6691F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC36E32F-CC3C-C595-D9A4-76EEFE6691F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC36E32F-CC3C-C595-D9A4-76EEFE6691F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																GlobalSection(MonoDevelopProperties) = preSolution
+																										GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
