@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\BuiltIn\SetParticleSortingLayer.cs" />
      <Compile Include="Assets\Scripts\BuiltIn\Spawner.cs" />
      <Compile Include="Assets\Scripts\FollowParent.cs" />
+     <Compile Include="Assets\Scripts\LightController.cs" />
      <Compile Include="Assets\Scripts\NPCController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PullToolController.cs" />
