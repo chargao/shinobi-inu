@@ -23,9 +23,6 @@ public class NPCController : MonoBehaviour {
 		facingRight = -1;
 		facingUp = -1;
 		isVertical = false;
-		for(int i = 0; i < pathing.Length; i++) {
-			Debug.Log ("Direction "+i+": "+pathing[i]);
-		}
 		Debug.Log (transform.position);
 		currentIndex = 0;
 	}
@@ -59,7 +56,7 @@ public class NPCController : MonoBehaviour {
 		Vector3 relative = currentGoal.position - transform.position;
 		Vector3 movementNormal = Vector3.Normalize(relative);
 		float distanceToWaypoint = relative.magnitude;
-		float targetAngle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg - 90;
+		//float targetAngle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg - 90;
 
 		if (distanceToWaypoint < 0.1)
 		{
@@ -78,7 +75,7 @@ public class NPCController : MonoBehaviour {
 			rigidbody2D.AddForce(new Vector2(movementNormal.x, movementNormal.y) * maxSpeed);
 		}
 
-		transform.rotation = Quaternion.Euler(0, 0, targetAngle);
+		//transform.rotation = Quaternion.Euler(0, 0, targetAngle);
 	}
 
 	public void decrementHealth(int amount) {
