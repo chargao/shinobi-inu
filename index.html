@@ -30,6 +30,7 @@
 				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
 				$missingScreen.hide();
 				$brokenScreen.hide();
+				$("#unityPlayer").hide();
 
 				u.observeProgress(function (progress) {
 					switch(progress.pluginStatus) {
@@ -60,7 +61,10 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "Builds.unity3d");
 				
-				$("#splash").click(function(){$(this).hide()})
+				$("#splash").click(function(){
+					$(this).hide();
+					$("#unityPlayer").show();
+					})
 			});
 		-->
 		</script>
