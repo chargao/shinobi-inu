@@ -19,7 +19,7 @@ public class PullToolController : MonoBehaviour {
 			frameCounter++;
 		}
 		else {
-			Destroy (this.gameObject);
+			//Destroy (this.gameObject);
 		}
 	}
 	
@@ -41,5 +41,11 @@ public class PullToolController : MonoBehaviour {
 				//thing.rigidbody.velocity += pullDirection*(pullDirection * Time.deltaTime);
 			}
 		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		
+		//touched = true;
+		Debug.Log ("hi");
 	}
 }

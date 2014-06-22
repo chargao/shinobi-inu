@@ -1973,7 +1973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb06653d1c02ce4c8d5e5d15f976027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ToFollow: {fileID: 877007315}
+  ToFollow: Player
+  z: 4
 --- !u!1 &457644330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3087,8 +3088,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 10
   isDoge: 0
+  health: 0
+  attack: 0
   weapon: {fileID: 100000, guid: ac2bd734ec5d7d84ebed6ee8d48c4876, type: 2}
-  PullTool: {fileID: 0}
 --- !u!61 &877007317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6606,6 +6608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
+  health: 0
   pathing:
   - {fileID: 1485603607}
   - {fileID: 2067674813}
@@ -6977,8 +6980,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a3fe7af589e109a42816335e0064726c, type: 2}
       propertyPath: ToFollow
-      value: 
-      objectReference: {fileID: 877007315}
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a3fe7af589e109a42816335e0064726c, type: 2}
+      propertyPath: z
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3fe7af589e109a42816335e0064726c, type: 2}
   m_RootGameObject: {fileID: 440575608}
